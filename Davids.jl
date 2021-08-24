@@ -45,14 +45,14 @@ phi = zeros(N);
 for t in range(1, N)
     phi[t] = eps()
 end
-phi1[1] = 1.0+eps();
+phi[1] = 1.0+eps();
 a =zeros(N);
 for j in range(1, N)
-   a[j] = step_davids(j, 100, phi1)
+   a[j] = step_davids(j, 100, phi)
 end
-phi_new = phi1 + a
+phi_new = phi + a
 lambda = rayleigh_quotient(phi_new)
-println(lambda)
+println("max  Eigenvalues = ",lambda)
 
 
 
